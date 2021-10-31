@@ -11,6 +11,7 @@ command! RemindMeShow lua require("nvim-remindme").show()
 command! RemindMeAdd lua require("nvim-remindme").add()
 command! RemindMeDelete lua require("nvim-remindme").delete()
 command! RemindMeEdit lua require("nvim-remindme").edit()
+command! RemindMeRefresh lua require("nvim-remindme").refresh()
 
 let g:remindme_loaded = 1
 
