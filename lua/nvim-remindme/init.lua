@@ -2,8 +2,17 @@ local remindme = {}
 local api = vim.api
 local buf, win
 
-function remindme.show()
-    print("nvim-remindme plugin: SHOW")
+local function read_data()
+    api.nvim_buf_set_lines(buf, 0, -1, false, {"Line 1", "Line 2", "Line 3"})
+end
+
+function remindme.close()
+    print("nvim-remindme plugin: CLOSE")
+    api.nvim_win_close(win, true)
+end
+
+function remindme.open()
+    print("nvim-remindme plugin: OPEN")
     -- create veritcal split to the right
     api.nvim_command("botright vnew")
     -- save the window handle and the buffer handle of the new spit
@@ -22,7 +31,13 @@ function remindme.show()
     -- set some options for the window
     api.nvim_win_set_option(win, "wrap", false)
     api.nvim_win_set_option(win, "cursorline", true)
-    api.nvim_win_set_width(win, 40)
+    api.nvim_win_set_option(win, "number", false)
+    api.nvim_win_set_option(win, "relativenumber", false)
+    api.nvim_win_set_option(win, "signcolumn", "no")
+    api.nvim_win_set_option(win, "laststatus", "no")
+    api.nvim_win_set_width(win, 60)
+
+    read_data()
 end
 
 function remindme.add()

@@ -7,11 +7,12 @@ if exists('g:remindme_loaded')
     finish
 endif
 
-command! RemindMeShow lua require("nvim-remindme").show()
+command! RemindMeOpen lua require("nvim-remindme").open()
 command! RemindMeAdd lua require("nvim-remindme").add()
 command! RemindMeDelete lua require("nvim-remindme").delete()
 command! RemindMeEdit lua require("nvim-remindme").edit()
 command! RemindMeRefresh lua require("nvim-remindme").refresh()
+command! RemindMeClose lua require("nvim-remindme").close()
 
 let g:remindme_loaded = 1
 
