@@ -34,7 +34,6 @@ function remindme.open()
     api.nvim_win_set_option(win, "number", false)
     api.nvim_win_set_option(win, "relativenumber", false)
     api.nvim_win_set_option(win, "signcolumn", "no")
-    api.nvim_win_set_option(win, "laststatus", "no")
     api.nvim_win_set_width(win, 60)
 
     read_data()
